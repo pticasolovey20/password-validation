@@ -1,8 +1,8 @@
 export const testPassword = (password) => {
-	const validateRegex = [
-		/[a-zA-Z]|[0-9]|[!,@,#,$,%,^,&,*,(,)]/,
-		/(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]|(?=.*[a-zA-Z])(?=.*[!,@,#,$,%,^,&,*,(,)])[a-zA-Z!,@,#,$,%,^,&,*,(,)]|(?=.*\d)(?=.*[!,@,#,$,%,^,&,*,(,)])[\d!,@,#,$,%,^,&,*,(,)]/,
-		/(?=.*[a-zA-Z])(?=.*\d)(?=.*[!,@,#,$,%,^,&,*,(,)])[a-zA-Z\d!,@,#,$,%,^,&,*,(,)]/,
+	const validRegExp = [
+		/[a-zA-Z]|\d|[!,@,#,$,%,^,&,*,(,)]/,
+		/(?=.*[a-zA-Z])(?=.*\d)|(?=.*[a-zA-Z])(?=.*[!,@,#,$,%,^,&,*,(,)])|(?=.*\d)(?=.*[!,@,#,$,%,^,&,*,(,)])/,
+		/(?=.*[a-zA-Z])(?=.*\d)(?=.*[!,@,#,$,%,^,&,*,(,)])/,
 	];
 
 	const empty = ["#8f8f8f", "#8f8f8f", "#8f8f8f"];
@@ -13,8 +13,8 @@ export const testPassword = (password) => {
 
 	let counter = 0;
 
-	validateRegex.forEach((regex) => {
-		if (new RegExp(regex).test(password)) {
+	validRegExp.forEach((regExp) => {
+		if (new RegExp(regExp).test(password)) {
 			counter += 1;
 		}
 	});
@@ -34,7 +34,7 @@ export const testPassword = (password) => {
 					return strong;
 
 				default:
-					return;
+					return empty;
 			}
 		}
 	} else {

@@ -1,10 +1,14 @@
-import React from "react";
-import { PasswordValidation } from "./components/PasswordValidation";
+import React, { useState } from "react";
+import { Input } from "./components/Input";
+import { Indicator } from "./components/Indicator";
 
 export const App = () => {
+	const [password, setPassword] = useState("");
+
 	return (
-		<div className="content-wrapper">
-			<PasswordValidation />
+		<div className="app-wrapper">
+			<Input setPassword={setPassword} />
+			<Indicator password={password} />
 		</div>
 	);
 };
