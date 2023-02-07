@@ -14,41 +14,54 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: #e6ecfe;
+	background-color: #fff;
 }
 
 .app-wrapper {
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
-	width: 400px;
-	padding: 20px;
-	margin: 0 auto;
-	border-radius: 5px;
+	gap: 15px;
+	width: 500px;
+	padding: 30px 20px;
 	box-shadow: 5px 5px 10px #9a92d4;
 	background-color: #efedff;
-	text-align: center;
 }
 
 .input-wrapper {
 	display: flex;
 	width: 100%;
-	height: 35px;
+	height: 50px;
 	position: relative;
+	border: 2px solid #9a92d4;
+	border-radius: 5px;
 
 	input {
 		width: 100%;
 		height: 100%;
+		font-size: 18px;
 		padding-left: 10px;
-		border: 1px solid lightgray;
 		border-radius: 5px;
-		font-size: 17px;
-		transition: all 0.3s;
+		background-color: transparent;
 
-		&:focus {
-			border-color: #9a92d4;
-			box-shadow: inset 0 0 5px #9a92d4;
+		&:focus + label,
+		&:not(:placeholder-shown) + label {
+			left: 6px;
+			top: -9px;
+			padding: 0 5px;
+			font-size: 14px;
+			background-color: #efedff;
 		}
+	}
+
+	label {
+		position: absolute;
+		left: 10px;
+		top: 12px;
+		transition: all 0.25s;
+		font-size: 18px;
+		font-weight: 600;
+		color: rgba(0, 0, 0, 0.5);
+		cursor: text;
 	}
 
 	button {
@@ -76,7 +89,7 @@ body {
 		width: 100%;
 		height: 100%;
 		background: lightgray;
-		border-radius: 5px;
+		border-radius: 3px;
 		border: 1px solid rgba(0, 0, 0, 0.25);
 	}
 }

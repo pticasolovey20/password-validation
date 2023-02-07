@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { testPassword } from "../services/testPassword";
 
-const IndicatorComponent = ({ password }) => {
+export const IndicatorComponent = ({ password }) => {
 	return (
 		<div className="indicator">
 			{testPassword(password).map((color, index) => (

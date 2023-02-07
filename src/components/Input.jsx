@@ -7,9 +7,10 @@ const InputComponent = ({ setPassword }) => {
 		<div className="input-wrapper">
 			<input
 				type={type ? "password" : "text"}
-				placeholder="Type password"
+				placeholder=" "
 				onChange={(event) => setPassword(event.target.value)}
 			/>
+			<label>Password</label>
 			<button onClick={() => setType(!type)}>
 				<span className="show">{type ? "SHOW" : "HIDE"}</span>
 			</button>
